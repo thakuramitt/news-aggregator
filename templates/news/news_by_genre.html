@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.115.4">
+    <title>News Aggregator</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+    <style>
+
+      .site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+
+
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .navbar-brand {
+
+        font-size: 2vh;
+      }
+    
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+
+
+  <body>
+<header data-bs-theme="dark">
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>About</h4>
+          <p class="text-body-secondary">This is a sample News Aggregator site!!</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <p class="navbar-brand">
+        <svg
+        width="1.3rem"
+        height="1.3rem"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#ffffff">
+        <path
+          d="M480 32H32C14.33 32 0 46.33 0 64v384c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm-8 384H40V56h432z"
+        />
+        <path
+          d="M176 144h160v32H176zm0 64h160v32H176zm0 64h160v32H176z"
+        />
+      </svg>
+      
+        <strong>News Aggregator</strong>
+
+        <a href="http://127.0.0.1:8000/sports" class="btn btn-primary my-2">Sports</a>
+        <a href="http://127.0.0.1:8000/technology" class="btn btn-primary my-2">Technology</a>
+        <a href="http://127.0.0.1:8000/in" class="btn btn-primary my-2">India</a>
+        <a href="http://127.0.0.1:8000/us" class="btn btn-primary my-2">Us</a>
+        <a href="http://127.0.0.1:8000/business" class="btn btn-primary my-2">Business</a>
+        <a href="http://127.0.0.1:8000/entertainment" class="btn btn-primary my-2">Entertainment</a>
+        <a href="http://127.0.0.1:8000/health" class="btn btn-primary my-2">Health</a>
+        <a href="http://127.0.0.1:8000/science" class="btn btn-primary my-2">Science</a>
+        <a href="http://127.0.0.1:8000/bbc" class="btn btn-primary my-2">BBC</a>
+        <a href="http://127.0.0.1:8000/fox" class="btn btn-primary my-2">Fox News</a>
+    </p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Django Project</h1>
+        <p class="lead text-body-secondary"> This is a simple News Aggregator website designed with the intention of
+
+          trying out Python's Django framework!
+
+        </p>
+        <p>
+          <a href="http://127.0.0.1:8000/" class="btn btn-primary my-2">Refresh</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        {% for article in articles %}
+
+        <div class="col">
+          <div class="card shadow-sm">
+
+            <img class="card-img-topping" style="width: auto; height: 200px;" src="{{ article.urlToImage }}" alt="Card image cap">
+
+
+            <div class="card-body">
+
+                <h5 class="card-title">{{ article.title }}</h5>
+
+                <p class="card-text">{{ article.description }}</p>
+
+                <hr>
+                <a href="{{article.url}}" class="card-text">Read more</a>
+
+              <div class="d-flex justify-content-between align-items-center"></div>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+        </div>
+        
+       
+       
+      </div>
+    </div>
+
+</main>
+
+    </body>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Code by <i> <strong>Thakur and Namdev</strong> </i> We both wanted to modify this further by adding
+            
+              multiple news Categories, which soon be revealed.
+            
+            </p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="">Lastest News</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="https://thakuramitsingh.netlify.app/">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+      </div>
+</footer>
+</html>
