@@ -1,5 +1,4 @@
-
-import hashlib, string
+import hashlib
 
 def generateUUIDfromString(string):
 
