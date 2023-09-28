@@ -5,8 +5,8 @@ from django.db import models
 class NewsArticle(models.Model):
 
 
-    uuid = models.CharField(primary_key=True, max_length=10, default="news")
-    genre = models.CharField(max_length=5, default="genre")
+    uuid = models.CharField(primary_key=True, max_length=10)
+    genre = models.CharField(max_length=5)
     title = models.CharField(max_length=5)
     author = models.CharField(max_length=20, blank = True, null = True)
     description = models.CharField(max_length=20, blank = True, null = True)

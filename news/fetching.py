@@ -1,10 +1,13 @@
 from newsapi import NewsApiClient
 
-from news.uuids import generateID
+from django.db import IntegrityError
+
+
+from news.uuids.generateID import generateUUIDfromString 
 
 from .models import NewsArticle
 
-newsapi = NewsApiClient(api_key='xxxxxxxxxxxxxxxxxxxxxxxxxx')
+newsapi = NewsApiClient(api_key='044d9f64aa3144fd88b1bdc965218675')
 
 
 # def fetchingFunc(query):
@@ -84,10 +87,14 @@ def fecthingfuncToo(query):
 
     all_articles = newsapi.get_everything(q=query, language='en')
 
-    list =  all_articles.get('articles', [])
+    articleList =  all_articles.get('articles', [])
+
+    uuidList = list(NewsArticle.objects.values_list("uuid", flat=True))
+
+    #print(uuidList)
 
 
-    for article in list:
+    for article in articleList:
 
         # uuidDatabase = pd.DataFrame({"title":NewsArticle.objects.values_list("title"),"uuid":NewsArticle.objects.values_list("uuid")})
 
@@ -96,26 +103,28 @@ def fecthingfuncToo(query):
 
         # uuidFromDatabase = uuidDatabase.to_dict()
 
-        uuidList = [NewsArticle.objects.values_list("uuid")]
+        hashId = generateUUIDfromString(article['title'])
 
-        hashId = generateID.generateUUIDfromString(article['title']),
+        #print(hashId)
 
-        if not(article['title'] == "[Removed]") and  not(hashId in uuidList):
+        #print(article)
+
+        if (article['title'] != "[Removed]") and (hashId not in uuidList):
             
-            NewsArticle.objects.create(
-                genre = query,
-                uuid = hashId,
-                title=article['title'],
-                author=article['author'],
-                description=article['description'],
-                url=article['url'],
-                publishedAt=article['publishedAt'],
-                urlToImage = article['urlToImage'],
+            try:
+                NewsArticle.objects.create(
+                    genre = query,
+                    uuid = hashId,
+                    title=article['title'],
+                    author=article['author'],
+                    description=article['description'],
+                    url=article['url'],
+                    publishedAt=article['publishedAt'],
+                    urlToImage = article['urlToImage'],
                 
                 )
-        else:
-            continue
-
+            except IntegrityError:
+                print(article['title'])
     return all_articles
 
 
