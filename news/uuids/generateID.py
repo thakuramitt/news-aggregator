@@ -1,10 +1,10 @@
 import hashlib
 
-def generateUUIDfromString(string):
+def generateUUIDfromString(uuidfromTitle):
 
     sha = hashlib.sha256()
 
-    sha.update(string.encode('utf-8'))
+    sha.update(uuidfromTitle.encode('utf-8'))
 
     hash_hex = sha.hexdigest()
 
