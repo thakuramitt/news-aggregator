@@ -1,3 +1,33 @@
+from django.test import TestCase
+from news.uuids import generateID
+from news.models import NewsArticle
+import pytest
+from news import views
+from news.fetching import fecthingfuncToo
+class testViews(TestCase):
+    
+    # def setup(self):
+       arcticle= NewsArticle.objects.create(
+        uuid ="bg12lk65ls", 
+        title= "testing news", 
+        genre="test" 
+        )
+
+
+    @pytest.mark.django_db(transaction=True)
+    # def test_fecthingfuncToo(self):
+        # self.assertEquals(, NewsArticle.objects.filter(genre="test"))
+
+    # Create your tests here.
+
+   
+    # def test_views(self):
+        # self.assertEquals(self.arcticle.title, "testing news")
+
+#1-setup function - create 3-4 articles for test
+#2-two tests for views functions- 
+#3- tearDown (delete article after testing done)
+
 def healthNews(request):
 
     params = {
@@ -410,3 +440,6 @@ def entertainmentNews(request):
     }
 
     return render(request, 'news/news_by_genre.html', {'articles' : allData})
+
+
+

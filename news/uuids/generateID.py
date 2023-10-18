@@ -1,6 +1,8 @@
 import hashlib
 
 def generateUUIDfromString(uuidfromTitle):
+    if len(uuidfromTitle) == 0:
+        return "empty_title"
 
     sha = hashlib.sha256()
 
