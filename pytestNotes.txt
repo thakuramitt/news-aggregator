@@ -1,0 +1,49 @@
+
+Assert is a build in method from Pytest which simply compare if the statement is valid or not.
+
+Using -x : This will stop the testing as soon as we encounter any test failure
+Using -rP : This will display if any additional outputs from the test function
+
+
+@pytest.mark.skip - Used to skip the test-case
+
+
+------------------------------------------------------------------------------------------
+
+
+A sample pattern for writing a test case would be :
+
+1. Arrange 
+2. Act
+3. Assert
+
+
+
+Fixtures : Fixtures are functions which run before / after each test function to which the Fixture is applied (runs once per test).
+
+More importantly, fixtures are used to feed data to tests such as Database connections, URLs to test etc.
+
+To overcome the fixture running only once per test case - we can make use of scope="session" to make sure fixture runs with every testcs.
+
+Another way to use Fixtures are described in 2nd video from time stamp 19:20.
+
+
+@pytest.mark.django_db - Used to access the Database 
+
+Another way to access the database is through fixtures ->  @pytest.fixture() 
+    
+                                                         def funcName(db name):  -> reference from 2nd video timestamp 16:23.
+
+
+----------------------------------------------------------------------------------------------------------
+
+About Testing from Database - Watch 2nd video from time stamp 11:55 : reference to showcase how tables / database work while testing.
+
+----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
