@@ -1,0 +1,78 @@
+from django.test import TestCase
+from news.uuids import generateID
+from news.models import NewsArticle
+import pytest
+from news import views
+
+
+class NewsArticleTestCase(TestCase):
+
+    def setUp(self):
+
+        NewsArticle.objects.create(uuid = generateID.generateUUIDfromString("The Best iPad Deals During October Prime Day"), title="The Best iPad Deals During October Prime Day")
+        
+        NewsArticle.objects.create(uuid = generateID.generateUUIDfromString("The Best Pixel Deals During October Prime Day"), title="The Best Pixel Deals During October Prime Day")
+
+
+    def test_news(self):
+
+        apple_uuid = NewsArticle.objects.get(title="The Best iPad Deals During October Prime Day")
+
+        android_uuid = NewsArticle.objects.get(title="The Best Pixel Deals During October Prime Day")
+
+        print(apple_uuid.uuid)
+        print(android_uuid.uuid)
+        
+        self.assertEqual(NewsArticle.objects.all().count(), 2)
+
+        self.assertEqual(android_uuid.title,"The Best Pixel Deals During October Prime Day")
+
+
+    # def test_news1(self):
+
+    #     apple_uuid = NewsArticle.objects.get(uuid="5iof6oehfo")
+
+    #     self.assertEqual(apple_uuid.title,"The Best iPad Deals During October Prime Day")
+
+
+
+article =
+localtes
+1. fetching
+
+
+2. api/display
+def test_top_headlines : "/"
+class testAPI():
+
+
+def setup():
+# create articles for test
+
+
+url = "%s?tenant_id=%s" % (reverse('inventory:resource_list'), self.tenant1)
+
+
+
+{
+"status": "ok",
+"totalResults": 6834,
+-"articles": [
+-{
+-"source": {
+"id": null,
+"name": "Biztoc.com"
+},
+
+
+"author": "aol.com",
+"title": "Elon Musk’s worst nightmare",
+"description": "In 2021, an engineer named Missy Cummings drew the ire of Elon Musk on the social network then called Twitter. A professor at Duke University, Cummings had conducted research on the safety of self-driving cars, and the findings led her to issue some stark war…",
+"url": "https://biztoc.com/x/4fe3ea7b9d72bb42",
+"urlToImage": "https://c.biztoc.com/p/4fe3ea7b9d72bb42/s.webp",
+"publishedAt": "2023-10-12T09:54:08Z",
+"content": "In 2021, an engineer named Missy Cummings drew the ire of Elon Musk on the social network then called Twitter. A professor at Duke University, Cummings had conducted research on the safety of self-dr… [+277 chars]"
+},
+
+
+
