@@ -30,6 +30,7 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
     
         self.assertTemplateUsed(response, 'news/news_by_genre.html')
+        
     # this is not work bcz response getting error 
     # def test_views_not_args(self):
     #     client = Client()

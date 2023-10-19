@@ -11,7 +11,7 @@ logging.basicConfig(filename='newsapplogs.log',
 newsapi = NewsApiClient(api_key='044d9f64aa3144fd88b1bdc965218675')
 
 def fecthingfuncToo(query):
-    logging.info("fecthingfunc started")
+    
     all_articles = newsapi.get_everything(q=query, language='en')
 
     articleList =  all_articles.get('articles', [])
@@ -33,8 +33,8 @@ def fecthingfuncToo(query):
                     urlToImage = article['urlToImage'],
                 )
             except IntegrityError:
+                logging.exception("exeception while save data in model")
                 print(article['title'])
-        logging.info("fetchingfunction is end")
     return all_articles
 
 

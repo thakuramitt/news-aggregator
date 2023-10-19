@@ -1,6 +1,6 @@
 from django.db import models
 import logging
-logging.basicConfig(filename='newsapplogs.log',
+logging.basicConfig(filename='logs/newsapplogs.log',
                     level=10,
                     format="{asctime}:{levelname}:{filename}:{process}:{message}",
                     style='{'
