@@ -1,3 +1,14 @@
+use django logging 
+use docker to run whole project
+git push fixed - errors
+prepare documentation 
+
+
+
+
+
+
+
 from django.test import TestCase
 from news.uuids import generateID
 from news.models import NewsArticle

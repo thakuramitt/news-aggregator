@@ -2,11 +2,11 @@ from news.models import NewsArticle
 from django.test import TestCase
 import pytest
 
+@pytest.mark.django_db(transaction=True)
 class Testdb(TestCase):
     def setUp(self):
         print("this is test for DB ")
-
-        self.arcticle= NewsArticle.objects.create(
+        NewsArticle.objects.create(
                     genre = 'test',
                     uuid = 'bc12ol34nc',
                     title='this is test article',
@@ -14,14 +14,11 @@ class Testdb(TestCase):
                 )
         print("this is test for DB ")
     
-    @pytest.mark.django_db(transaction=True)
     def test_fecthingfuncToo(self):
-        uuidmy = self.arcticle.uuid
-        data = NewsArticle.objects.get(uuid =uuidmy)
-        self.assertEqual(data.uuid, self.arcticle.uuid)
-        self.assertEqual(data.genre, self.arcticle.genre)
-        self.assertEqual(data.title, self.arcticle.title)
-    
+        uuidmy = NewsArticle.objects.get(uuid = 'bc12ol34nc')
+        self.assertEqual(uuidmy.uuid, 'bc12ol34nc')
+        self.assertEqual(uuidmy.genre, 'test')
+        self.assertEqual(uuidmy.title, 'this is test article')
 
     # def test_delete_data(self):
     #     uuidmy = self.arcticle.uuid

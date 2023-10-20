@@ -7,11 +7,8 @@ from django.db import IntegrityError
 from news.uuids.generateID import generateUUIDfromString 
 from .models import NewsArticle
 import logging
-logging.basicConfig(filename='newsapplogs.log',
-                    level=10,
-                    format="{asctime}:{levelname}:{filename}:{process}:{message}",
-                    style='{'
-                    )
+logger = logging.getLogger(__name__)
+
 newsapi = NewsApiClient(api_key='044d9f64aa3144fd88b1bdc965218675')
 
 <<<<<<< HEAD
@@ -19,7 +16,7 @@ newsapi = NewsApiClient(api_key='044d9f64aa3144fd88b1bdc965218675')
 
 >>>>>>> c37102f0f8c4ffa869d0ba5227352668825a51d7
 def fecthingfuncToo(query):
-    logging.info("fecthingfunc started")
+    
     all_articles = newsapi.get_everything(q=query, language='en')
 
     articleList =  all_articles.get('articles', [])
@@ -47,8 +44,8 @@ def fecthingfuncToo(query):
                     urlToImage = article['urlToImage'],
                 )
             except IntegrityError:
+                logger.exception("exeception while save data in model")
                 print(article['title'])
-        logging.info("fetchingfunction is end")
     return all_articles
 
 
