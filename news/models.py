@@ -1,13 +1,9 @@
 from django.db import models
 import logging
-logging.basicConfig(filename='logs/newsapplogs.log',
-                    level=10,
-                    format="{asctime}:{levelname}:{filename}:{process}:{message}",
-                    style='{'
-                    )
+logger = logging.getLogger(__name__)
 
 class NewsArticle(models.Model):
-    logging.info("NewsArticle model creation started")
+    logger.info("NewsArticle model creation started")
     uuid = models.CharField(primary_key=True, max_length=10)
     genre = models.CharField(max_length=5)
     title = models.CharField(max_length=5)
@@ -17,6 +13,6 @@ class NewsArticle(models.Model):
     genre = models.CharField(max_length=50)
     publishedAt = models.DateTimeField(auto_now_add=True)
     urlToImage = models.CharField( max_length=100, blank = True, null = True)
-    logging.info("NewsArticle model created successfully")
+    logger.info("NewsArticle model created successfully")
     def __str__(self):
         return self.title

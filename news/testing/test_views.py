@@ -5,7 +5,6 @@ from news import fetching
 from news.models import NewsArticle
 from news.uuids.generateID import generateUUIDfromString
 
-
 class TestViews(TestCase):
     def setUp(self):
         self.client = Client()

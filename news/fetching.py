@@ -3,11 +3,8 @@ from django.db import IntegrityError
 from news.uuids.generateID import generateUUIDfromString 
 from .models import NewsArticle
 import logging
-logging.basicConfig(filename='newsapplogs.log',
-                    level=10,
-                    format="{asctime}:{levelname}:{filename}:{process}:{message}",
-                    style='{'
-                    )
+logger = logging.getLogger(__name__)
+
 newsapi = NewsApiClient(api_key='044d9f64aa3144fd88b1bdc965218675')
 
 def fecthingfuncToo(query):
@@ -33,7 +30,7 @@ def fecthingfuncToo(query):
                     urlToImage = article['urlToImage'],
                 )
             except IntegrityError:
-                logging.exception("exeception while save data in model")
+                logger.exception("exeception while save data in model")
                 print(article['title'])
     return all_articles
 

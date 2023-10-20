@@ -1,5 +1,8 @@
 use django logging 
 use docker to run whole project
+git push fixed - errors
+prepare documentation 
+
 
 
 
