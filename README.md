@@ -24,7 +24,7 @@ Here're some of the project's best features:
 *   Easy to use
 *   Has backup of news articles on database
 *   Fetches new news on every click
-*   Implemented logging in a different for more readability
+*   Implemented logging in a different file for more readability
 *   Docker composed and can be cloned
 
 <h2>🛠️ Installation Steps:</h2>
