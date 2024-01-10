@@ -82,7 +82,7 @@ DATABASES = {
     }
 }
 
-NEWS_API_KEY = '044d9f64aa3144fd88b1bdc965218675'
+NEWS_API_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 
 # Password validation
